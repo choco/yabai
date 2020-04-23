@@ -301,7 +301,7 @@ int main(int argc, char **argv)
     if (scripting_addition_is_installed()) {
         scripting_addition_load();
     } else {
-        notify("scripting-addition", "payload is not installed, some features will not work!");
+        debug("scripting-addition: payload is not installed, some features will not work!\n");
     }
 
     exec_config_file();

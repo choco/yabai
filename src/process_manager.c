@@ -33,6 +33,15 @@ struct process *process_create(ProcessSerialNumber psn)
 
     process->psn = psn;
     GetProcessPID(&process->psn, &process->pid);
+
+    if (strcmp("SoundSource", process->name)==0) {
+        process->background = false;
+        process->xpc = false;
+        process->lsuielement = false;
+        process->lsbackground = false;
+        return process;
+    }
+
     process->background = (process_info.processMode & modeOnlyBackground) != 0;
     process->xpc = process_info.processType == 'XPC!';
 

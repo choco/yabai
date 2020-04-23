@@ -42,7 +42,7 @@ archive: man sa install sign icon
 	rm -rf $(ARCH_PATH)
 
 sign:
-	codesign -fs "yabai-cert" $(BUILD_PATH)/yabai
+	codesign -fs "Developer ID Application: Enrico Ghirardi (VJ8592T25A)" $(BUILD_PATH)/yabai
 
 clean:
 	rm -rf $(BUILD_PATH)
